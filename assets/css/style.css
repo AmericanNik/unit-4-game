@@ -1,0 +1,213 @@
+body{
+  background-color:#f4f4f4;
+}
+
+h3{
+  padding:20px;
+}
+
+.title-section{
+  background-color: #333;
+  color:white;
+  padding:10px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 1px 1px;
+}
+.gameOn{
+  height:300px;
+}
+
+
+.container{
+  width:80%;
+  max-width: 1460px;
+  background-color:lightblue;
+  border: 1px solid red;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto;
+
+}
+
+.namePlate{
+  }
+
+
+.namePlate p{
+  background-color:rgba(51, 51, 51, .75);
+  color:white;
+  font-weight: bold;
+  padding:5px;
+  margin-top:205px;
+}
+
+#enemy{
+  display: inline;
+  margin:0;
+}
+#player{
+  display:inline-flex;
+  margin:0;
+}
+#stats{
+  max-width: 200px;
+  margin:0;
+  font-size:
+}
+
+.champSelect{
+  background-color:lightcoral;
+  position:relative;
+  height:fill;
+}
+
+.charactersSection{
+  background-color:white;
+  border:1px solid black;
+  position: relative;
+}
+
+.heroSelection{
+  background-color:lightgreen;
+  border: 1px solid red;
+}
+
+
+.heroTile{
+  background-color:#888;
+  border: 1px solid lightgreen;
+  width:250px;
+  height:250px;
+  display:inline-block;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  margin:5px;
+}
+
+.chosenTile{
+
+  background-color:#888;
+  border: 1px solid lightgreen;
+  width:250px;
+  height:250px;
+  display:inline-block;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  margin:5px;
+  pointer-events: none;
+
+}
+
+.tempEnemy{
+
+  background-color:#888;
+  border: 1px solid lightgreen;
+  width:250px;
+  height:250px;
+  display:inline-block;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  margin:5px;
+  pointer-events: none;
+
+}
+
+.activeEnemy{
+  background-color:#888;
+  border: 1px solid lightgreen;
+  width:250px;
+  height:250px;
+  display:inline-block;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  margin:5px;
+
+}
+
+.stats{
+  color:black;
+}
+
+.rowClassLose{
+  background-color: lightgreen;
+}
+
+.fightStats{
+  width:200px;
+  height:200px;
+  border:1px solid black;
+  margin-top:50px;
+  font-size: 16px;
+  color:#333;
+}
+
+.game-title{
+  background-color:lightcyan;
+}
+
+.confirm-button{
+  margin:20px;
+}
+
+.tempDisplay{
+  height:300px;
+}
+
+.playersHero{
+  float:left;
+  position:relative;
+  margin-left:20px;
+  ;
+}
+
+.playersEnemies{
+  float:right;
+  position:relative;
+}
+
+.gameDisplay{
+  clear: both;
+  height:;
+  pointer-events: none;
+}
+
+.battleDisplay{
+  background-color:lightblue;
+}
+
+.battleDisplau .tempEnemy{
+  float:right;
+}
+
+#Aiden{
+  background: url(./../images/AidenTile.png)
+}
+
+#Lin{
+  background: url(./../images/LinTile.png)
+}
+
+#Saya{
+  background: url(./../images/SayaTile.png)
+}
+
+#Star{
+  background: url(./../images/StarTile.png)
+}
+#Nyx{
+  background: url(./../images/NyxTile.png)
+}
+#Boggs{
+  background: url(./../images/BoggsTile.png)
+}
+#Hinata{
+  background: url(./../images/HinataTile.png)
+}
+#Kov{
+  background: url(./../images/KovTile.png)
+}
