@@ -14,11 +14,11 @@ $(document).ready(function() {
   let eAttack = $('#eAttack');
   let eLife = $('#eLife');
   let pLife = $('#pLife');
-  let pAttack = $('#pAttack')
+  let pAttack = $('#pAttack');
   let pStats = $('#pStats');
   let eStats = $('#eStats');
   let docWins = $('#wins');
-  let docLosses = $('#losses')
+  let docLosses = $('#losses');
   //Global Variables
 
   let heroList = ['Aiden', "Lin", "Saya", "Star", "Nyx", "Boggs", "Hinata", "Kov"];
@@ -32,8 +32,8 @@ $(document).ready(function() {
   let gameOver = false;
   let enemyCounter = 0;
   let enemyTeamReady=false;
-  let wins = 0
-  let losses= 0
+  let wins = 0;
+  let losses= 0;
   //restart buttonSpot
 
   let restart = $('<button>');
@@ -46,7 +46,7 @@ $(document).ready(function() {
   let gameStart = function() {
 
     $('#wins').text(wins);
-    $('#losses').text(losses)
+    $('#losses').text(losses);
 
     restart.click(function(){
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
     heroChosen = 0;
     player.hide();
     player.empty();
-    enemy.empty()
+    enemy.empty();
     enemy.hide();
     stats.hide();
 
@@ -95,14 +95,17 @@ $(document).ready(function() {
     playerLife = 100;
     for (i = 0; i < heroList.length; i++) {
       let heroTile = $("<div>");
-      heroTile.addClass("heroTile namePlate", heroList[i]);
+      heroTile.addClass("heroTile namePlate animated zoomIn", heroList[i]);
       heroTile.attr("id", heroList[i]);
       heroTile.attr("data-tile", heroList[i]);
       heroTile.html('<p>' + heroList[i] + '</p>');
       $(".heroHolder").append(heroTile);
+
     }
+
     //makes hero tiles clickable to perform game function
     $('.heroTile').click(function() {
+      $('.heroTile').removeClass('zoomIn');
 
       //creates confirm hero button when a heroTile is clicked
       let confirmButton = $('<button>');
@@ -113,7 +116,7 @@ $(document).ready(function() {
       confirmButton.click(function() {
 
         //changes message text
-        console.log('Button pressed.  heroChosen: '+heroChosen)
+        console.log('Button pressed.  heroChosen: '+heroChosen);
         message.text('Choose Your Enemies!');
         submessage.text('Select any of these heros you wish to fight...');
         //changes confirm boolian to true
@@ -141,7 +144,7 @@ $(document).ready(function() {
           enemyTeamReady=false;
           //if player tries to select confirm button without selecting 3 enemies, gets this message.
           if(enemyCounter<3){
-            message.text('Please Select 3 Enemies')
+            message.text('Please Select 3 Enemies');
           }
           if(enemyCounter>=3){
           //hides confirm button
@@ -160,7 +163,7 @@ $(document).ready(function() {
           //hides unused heros
           $('.heroHolder').hide();
           message.text('Choose Your First Opponent...');
-          submessage.text('All eager to fight you.')
+          submessage.text('All eager to fight you.');
           console.log('heroChosen Step 3:' + heroChosen);
           //
           //Assigns stats to characters:
@@ -234,7 +237,7 @@ $(document).ready(function() {
 
       if (heroChosen === 6 && enemyConfirm === true) {
         eStats.text('Life: '+enemyLife+'Attack: '+enemyAttack);
-        message.text('Attack now!')
+        message.text('Attack now!');
         stats.show().text('VS');
         $(this).addClass('fightBox challenger');
         $('#enemy').append($(this));
@@ -273,6 +276,8 @@ $(document).ready(function() {
           }
           if(gameOver===true){
             $('#buttonSpot2').append(restart);
+            eStats.empty();
+            enemy.empty();
           }
 
             $('.heroTile').click(function() {
@@ -289,12 +294,12 @@ $(document).ready(function() {
               enemyAttack = 10 + Math.floor(Math.random() * 10);
               pStats.text('Life: '+ playerLife+' Attack: '+playerAttack);
               eStats.text('Life: '+enemyLife+'Attack: '+enemyAttack);
-              message.text('The next opponent is ready to fight you!')
+              message.text('The next opponent is ready to fight you!');
             }
             });
 
           if (heroChosen === 9 && enemyConfirm === true) {
-            message.text('Fighting!')
+            message.text('Fighting!');
             heroChosen++;
             console.log('move along please, heroChosen: ' + heroChosen);
 
@@ -316,13 +321,13 @@ $(document).ready(function() {
             $('#confirmButton3').prop('disabled', true);
             $('#heroHldr').append($('.challenger'));
             console.log('appending!' + heroChosen);
-            message.text('Click on your final challenger to invite them to fight!')
+            message.text('Click on your final challenger to invite them to fight!');
             enemyConfirm=false;
           }
           $('.heroTile').click(function(){
           if(heroChosen===11 && enemyConfirm===false){
-            message.text('This is the final battle...begin!')
-            submessage.text('Can you survive this last hero?')
+            message.text('This is the final battle...begin!');
+            submessage.text('Can you survive this last hero?');
             heroChosen++;
             enemyConfirm=true;
             $('#confirmButton3').prop('disabled', false);
@@ -348,7 +353,7 @@ $(document).ready(function() {
         console.log('playerAttack: ' + playerAttack);
         console.log('enemylife: ' + enemyLife);
         console.log('enemyAttack: ' + enemyAttack);
-        console.log('preflag, heroChosen: '+heroChosen)
+        console.log('preflag, heroChosen: '+heroChosen);
       }
 
       if(enemyLife <=0 && heroChosen === 13){
@@ -357,13 +362,17 @@ $(document).ready(function() {
         console.log('END GAME!!!');
         $('heroHolder').append($('button3'));
         message.text('Congratulations! You won!');
+        eStats.empty();
+        $('.chosenTile').addClass('tada infinite');
+        eStats.empty();
         if(enemyLife<=0 && playerLife>0){
-          console.log('logging win!')
-          wins++
+          eStats.empty();
+          console.log('logging win!');
+          wins++;
         }
 
         $('#wins').text(wins);
-        $('#losses').text(losses)
+        $('#losses').text(losses);
         submessage.text('Press restart to play again!');
         confirmButton3.hide();
         restart.show();
@@ -388,7 +397,7 @@ $(document).ready(function() {
       message.text('You Lost!');
       losses++;
       $('#wins').text(wins);
-      $('#losses').text(losses)
+      $('#losses').text(losses);
       submessage.text('Click restart to try again!');
       console.log("LOST");
       $('#buttonSpot2').empty();
@@ -444,7 +453,7 @@ $(document).ready(function() {
     });
     //end of gamestart function
     if (gameOver===true && heroChosen>0){
-      $('#buttonSpot2').append($('#restartButton'))};
+      $('#buttonSpot2').append($('#restartButton'));}
       player.empty();
       enemy.empty();
       pStats.empty();
