@@ -95,7 +95,7 @@ $(document).ready(function() {
     playerLife = 100;
     for (i = 0; i < heroList.length; i++) {
       let heroTile = $("<div>");
-      heroTile.addClass("heroTile namePlate animated zoomIn", heroList[i]);
+      heroTile.addClass("heroTile namePlate animated flipInY", heroList[i]);
       heroTile.attr("id", heroList[i]);
       heroTile.attr("data-tile", heroList[i]);
       heroTile.html('<p>' + heroList[i] + '</p>');
@@ -105,7 +105,7 @@ $(document).ready(function() {
 
     //makes hero tiles clickable to perform game function
     $('.heroTile').click(function() {
-      $('.heroTile').removeClass('zoomIn');
+      $('.heroTile').removeClass('flipInY');
 
       //creates confirm hero button when a heroTile is clicked
       let confirmButton = $('<button>');
