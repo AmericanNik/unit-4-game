@@ -96,7 +96,7 @@ $(document).ready(function() {
         //changes message text
         console.log('Button pressed.  heroChosen: '+heroChosen)
         message.text('Choose Your Enemies!');
-        submessage.text('Select any 3 available heros to fight!')
+        submessage.text('Select any 3 available heros to fight!');
         //changes confirm boolian to true
         heroConfirm = true;
         //changes selected hero classes to isolate and move it to the side
@@ -312,14 +312,14 @@ $(document).ready(function() {
       }
       if(enemyLife <=0 && heroChosen === 13){
         $('#heroHldr').append($('.challenger'));
-        console.log('heroChosen: '+heroChosen)
+        console.log('heroChosen: '+heroChosen);
         console.log('END GAME!!!');
         $('heroHolder').append($('button3'));
         message.text('congratulations! You won!');
         submessage.text('Press restart to play again!');
         confirmButton3.hide();
         restart.show();
-        $('#buttonSpot2').append($('#restartButton'));
+        $('#buttonSpot2').append(restart);
         gameOver=true;
       }
       stats.text('Health Remaining ' + playerLife);
