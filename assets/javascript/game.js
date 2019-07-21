@@ -41,6 +41,32 @@ $(document).ready(function() {
 
   let gameStart = function() {
 
+    restart.click(function(){
+      if (gameOver===true && heroChosen>0){
+        console.log('wtf');
+        gameOver=false;
+        enemyConfirm=false;
+        heroConfirm=false;
+        enemyTeamReady=false;
+        enemyCounter=0;
+        $('.champSelect').addClass('tempDisplay');
+        $('#championSelect').removeClass('battleDisplay').addClass('gameDisplay');
+        ($('#heroHldr')).empty();
+        // ($('.rowClassLose')).empty();
+        player.empty();
+        enemy.empty();
+        stats.empty();
+        ($('.champSelect').hide());
+        // ($('.champSelect')).empty();
+        heroChosen=0;
+        $('.heroHolder').show();
+        restart.hide();
+        message.text('Select Your Hero!');
+        submessage.text('');
+        gameStart();
+  }
+});
+
     heroChosen = 0;
     player.hide();
     enemy.hide();
@@ -215,6 +241,9 @@ $(document).ready(function() {
             console.log("challenger removed");
             console.log('Enemy defeated, heroChosen: ' + heroChosen);
           }
+          if(gameOver===true){
+            $('#buttonSpot2').append(restart);
+          }
 
             $('.heroTile').click(function() {
 //sets up 2nd opponent
@@ -279,11 +308,14 @@ $(document).ready(function() {
         console.log('playerAttack: ' + playerAttack);
         console.log('enemylife: ' + enemyLife);
         console.log('enemyAttack: ' + enemyAttack);
+        console.log('preflag, heroChosen: '+heroChosen)
       }
       if(enemyLife <=0 && heroChosen === 13){
         $('#heroHldr').append($('.challenger'));
+        console.log('heroChosen: '+heroChosen)
         console.log('END GAME!!!');
-        message.text('Congradulations! You won!');
+        $('heroHolder').append($('button3'));
+        message.text('congratulations! You won!');
         submessage.text('Press restart to play again!');
         confirmButton3.hide();
         restart.show();
@@ -301,6 +333,7 @@ $(document).ready(function() {
       message.text('You Lost!');
       submessage.text('Click restart to try again!');
       console.log("LOST");
+      $('#buttonSpot2').empty();
       restart.show();
       $('#buttonSpot2').append(restart);
       $('#confirmButton3').hide();

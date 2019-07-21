@@ -1,9 +1,24 @@
+
+html{
+  height:100%;
+}
+
 body{
-  background-color:#f4f4f4;
+
+background: url(./../images/test1.png);
+  background-size:cover;
+
+  background-position:center;
+}
+
+h1{
+  font-family: 'DM Serif Display', serif;
+  text-shadow: 2px 2px #111;
 }
 
 h3{
   padding:20px;
+  font-family: 'DM Serif Display', serif;
 }
 
 .title-section{
@@ -12,7 +27,7 @@ h3{
   padding:10px;
   text-align: center;
   margin-bottom: 30px;
-  box-shadow: 0 1px 1px 1px;
+  box-shadow: 0 0 1px 0 #222;
 }
 .gameOn{
   height:300px;
@@ -21,9 +36,9 @@ h3{
 
 .container{
   width:80%;
-  max-width: 1460px;
-  background-color:lightblue;
-  border: 1px solid red;
+  max-width: 960px;
+  background-color:#333;
+  padding:10px;
   text-align: center;
   margin-left: auto;
   margin-right:auto;
@@ -57,26 +72,24 @@ h3{
 }
 
 .champSelect{
-  background-color:lightcoral;
+  background-color:#f4f4f4;
   position:relative;
   height:fill;
 }
 
 .charactersSection{
-  background-color:white;
-  border:1px solid black;
+  background-color:#f4f4f4;
   position: relative;
 }
 
 .heroSelection{
-  background-color:lightgreen;
-  border: 1px solid red;
+  background-color:l#f4f4f4;
 }
 
 
 .heroTile{
   background-color:#888;
-  border: 1px solid lightgreen;
+  border: 1px solid #333;
   width:250px;
   height:250px;
   display:inline-block;
@@ -89,7 +102,7 @@ h3{
 .chosenTile{
 
   background-color:#888;
-  border: 1px solid lightgreen;
+  border: 1px solid #f4f4f4;
   width:250px;
   height:250px;
   display:inline-block;
@@ -104,7 +117,7 @@ h3{
 .tempEnemy{
 
   background-color:#888;
-  border: 1px solid lightgreen;
+  border: 1px solid #f4f4f4;
   width:250px;
   height:250px;
   display:inline-block;
@@ -118,7 +131,7 @@ h3{
 
 .activeEnemy{
   background-color:#888;
-  border: 1px solid lightgreen;
+  border: 1px solid #f4f4f4;
   width:250px;
   height:250px;
   display:inline-block;
@@ -134,7 +147,7 @@ h3{
 }
 
 .rowClassLose{
-  background-color: lightgreen;
+  background-color: #f4f4f4;
 }
 
 .fightStats{
@@ -147,7 +160,7 @@ h3{
 }
 
 .game-title{
-  background-color:lightcyan;
+  background-color:#f4f4f4;
 }
 
 .confirm-button{
@@ -177,7 +190,11 @@ h3{
 }
 
 .battleDisplay{
-  background-color:lightblue;
+  background-color:;
+}
+
+.row{
+  margin:20px;
 }
 
 .battleDisplau .tempEnemy{
